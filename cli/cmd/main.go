@@ -7,6 +7,7 @@ import (
 	"cuelang.org/go/cue/cuecontext"
 	"cuelang.org/go/cue/load"
 	"github.com/alecthomas/kong"
+	//cueschema "github.com/jmgilman/cue-playground/cli/cue"
 )
 
 var cli struct {
@@ -19,7 +20,7 @@ type validateCmd struct {
 
 func (c *validateCmd) Run() error {
 	// TODO: Use the embedded schema to validate the configuration file.
-	// files, err := cue.SchemaFiles.ReadDir("schema")
+	//files, err := cueschema.SchemaFiles.ReadDir("schema")
 
 	ctx := cuecontext.New()
 	instances := load.Instances([]string{
