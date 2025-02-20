@@ -17,7 +17,7 @@ func main() {
 	})
 	v := ctx.BuildInstance(insts[0])
 
-	// Dump the envs as CUE source
+	// Dump foo as CUE source
 	envs := v.LookupPath(cue.ParsePath("test.foo"))
 	src, err := format.Node(envs.Syntax())
 	if err != nil {
