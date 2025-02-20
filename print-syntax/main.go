@@ -18,10 +18,10 @@ func main() {
 	v := ctx.BuildInstance(insts[0])
 
 	// Dump foo as CUE source
-	envs := v.LookupPath(cue.ParsePath("test.foo"))
-	src, err := format.Node(envs.Syntax())
+	foo := v.LookupPath(cue.ParsePath("test.foo"))
+	src, err := format.Node(foo.Syntax())
 	if err != nil {
-		fmt.Printf("failed to format envs: %v\n", err)
+		fmt.Printf("failed to format foo: %v\n", err)
 	}
 
 	fmt.Printf("%s\n", src)
